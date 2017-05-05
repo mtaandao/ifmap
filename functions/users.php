@@ -7,4 +7,66 @@ h_alias, h_author, h_avatar, h_center, h_code, h_created, h_custom, h_descriptio
   
   function createUser() {
   }
+  
+  function updateUser() {
+  }
+  
+  function deleteUser()  {
+  }
+  
+  function getUsers() {
+    $conn = $_GLOBALS['conn'];
+    $sql = "SELECT * FROM hUsers ORDER BY h_created DESC";
+    $result = mysqli_querry($sql);
+    if( $result-num_rows>0 ) {
+      while ($row = mysqli_fetch_assoc($result)) {
+        $id = $row[''];
+        
+        echo '<table></table>';
+      }
+    } else {
+      echo '<div>
+      </div>
+    }
+  }
+  
+  function getUser($code) {
+  }
+  
+  function editUser($code) {
+  }
+  
+  function sortUsers($by, $sort) {
+  }
+  
+  function sortUsers($by) {
+  }
+  
+ function loginUser() {
+ }
+  
+ function logoutUser() {
+ }
+  
+ function confirmUser() {
+ }
+  
+ function forgotPass() {
+ }
+  
+ function resetPass() {
+ }
+  
+ function getKey() {
+ }
+  
+ function emailUser($email, $subject, $key) {
+   if($subject == "create") {
+   } elseif($subject == "confirm") {
+   } elseif($subject == "forgot") {
+   } elseif($subject == "reset") {
+   }
+ }
+  
+ 
 }
