@@ -2,6 +2,7 @@
 session_start();
 require_once 'functions/jabali.php';
 
+$hDB = new _hDatabase;
 $hUser = new _hUsers;
 $hResource = new _hResources;
 $hService = new _hServices;
@@ -9,17 +10,21 @@ $hMessage = new _hMessages;
 $hNote = new _hNotes;
 $hForm = new _hForms;
 
-?>
-<html>
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-<link href="login_style.css" type="text/css" rel="stylesheet"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+$hDB -> connect();
+
+echo '<html>
+ <head>';
+getStyle(hSTYLES."materialize.min.css");
+getStyle(hSTYLES."login_style.css");
+
+getScript(hSCRIPTS."jquery.js");
+getScript(hSCRIPTS."materialize.min.js");
+echo '
 </head>
-<body>
-<div id="wrapper">
- <?php
+<body>';
+echo '
+<div id="wrapper">';
+
 if(isset($_GET['login'])) {
   $hForm -> loginForm();
 } elseif(isset($_GET['confirm'])) {
@@ -38,7 +43,8 @@ if(isset($_POST['login'])) {
   $hUser -> loginUser();
 }
 
-?>
+$hDB -> close();
+echo '
 </div>
 </body>
-</html>
+</html>';
