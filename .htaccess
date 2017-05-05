@@ -13,12 +13,10 @@ RewriteCond %{REQUEST_FILENAME} -l
 RewriteRule ^ - [L]
 
 
-RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/?$ index.php?x=$1&z=$2&y=$3&r=$4 [L,QSA]
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/?$ index.php?action=$1&id=$2&key=$3 [L,QSA]
 
-RewriteRule ^([^/]+)/([^/]+)/([^/]+)/?$ index.php?x=$1&z=$2&y=$3 [L,QSA]
+RewriteRule ^([^/]+)/([^/]+)/?$ index.php?action=$1&id=$2 [L,QSA]
 
-RewriteRule ^([^/]+)/([^/]+)/?$ index.php?x=$1&z=$2 [L,QSA]
-
-RewriteRule ^([^/]+)/?$ index.php?x=$1 [L,QSA]
+RewriteRule ^([^/]+)/?$ index.php?action=$1 [L,QSA]
 
 </IfModule>
