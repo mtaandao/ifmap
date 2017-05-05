@@ -1,4 +1,7 @@
 <?php
+/*
+*User Forms
+*/
 
 class _hForms() {
 
@@ -36,6 +39,48 @@ class _hForms() {
     <br>
     </form>
     </div>';
+  }
+  
+  function logoutForm() {
+  }
+  
+  function registerForm() {
+  }
+  
+  function forgotForm() {
+  }
+  
+  function resetForm() {
+  }
+  
+  function aboutForm() {
+  }
+  
+  function userForm() {
+  }
+  
+  /*
+  *Service Forms
+  */
+  
+  
+  //Users class
+  function typeSummary() {
+  }
+  
+  function getTypes() {
+  }
+  
+  function getCount() {
+  }
+  
+  function getCount($status) {
+  }
+  
+  function listUsers($by) {
+  }
+  
+  function lastLogin() {
   }
   
 }
